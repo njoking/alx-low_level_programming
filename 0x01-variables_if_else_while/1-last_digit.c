@@ -6,7 +6,7 @@
 /**
  * main - this show the main function of the code
  *
- * return: the output will always return to 0
+ * Return: always 0(success)
  */
 int main(void)
 {
