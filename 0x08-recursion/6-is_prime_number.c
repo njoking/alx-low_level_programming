@@ -1,30 +1,59 @@
-#include <stdio.h>
 /**
- * prime_finder - finds out if a number is prime recursively
+ * prime_check - Check if number is prime
+ * @n: Number to check
+ * @f: Number to check against
  *
- * @x: number to determine if prime
- * @y: number to check if divisor
- *
- * Return: 1 if prime, 0 otherwise
+ * Return: 1 if prime, 0 if otherwise
  */
-int prime_finder(int x, int y)
+int prime_check(int n, int f)
 {
-	if (x == y)
-		return (1);
-	if (!(x % y))
+	if (n % f == 0 && f != (n / 2))
 		return (0);
-	return (prime_finder(x, y + 1));
+	else if (f >= (n / 2))
+		return (1);
+	else
+		return (prime_check(n, f + 1));
 }
 /**
- * is_prime_number - returns if a number is prime
+ * is_prime_number - Find if a given number is prime
+ * @n: Number to check
  *
- * @n: number to determine primeness of
- *
- * Return: 1 if prime, 0 otherwise
+ * Return: 1 if prime, 0 if otherwise
  */
 int is_prime_number(int n)
 {
-	if (n < 2)
+	if (n > 1)
+		return (prime_check(n, 2));
+	else if (n < 0)
 		return (0);
-	return (prime_finder(n, 2));
+	return (0);
+}/**
+ * prime_check - Check if number is prime
+ * @n: Number to check
+ * @f: Number to check against
+ *
+ * Return: 1 if prime, 0 if otherwise
+ */
+int prime_check(int n, int f)
+{
+	if (n % f == 0 && f != (n / 2))
+		return (0);
+	else if (f >= (n / 2))
+		return (1);
+	else
+		return (prime_check(n, f + 1));
+}
+/**
+ * is_prime_number - Find if a given number is prime
+ * @n: Number to check
+ *
+ * Return: 1 if prime, 0 if otherwise
+ */
+int is_prime_number(int n)
+{
+	if (n > 1)
+		return (prime_check(n, 2));
+	else if (n < 0)
+		return (0);
+	return (0);
 }
