@@ -1,4 +1,5 @@
 #include "main.h"
+#include <fcntl.h>
 /**
  * read_textfile - function that reads a textfile and prints
  * @filename: the file in question
