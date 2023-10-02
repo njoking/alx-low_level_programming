@@ -1,1 +1,1 @@
-file input output
+input output
